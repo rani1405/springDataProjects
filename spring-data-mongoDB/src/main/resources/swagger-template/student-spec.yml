@@ -1,0 +1,183 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "OpenAPI definition",
+    "version": "v0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": "Generated server url"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Student",
+      "description": "Student API"
+    }
+  ],
+  "paths": {
+    "/api/save-student": {
+      "post": {
+        "tags": [
+          "Student"
+        ],
+        "summary": "Save student into DB",
+        "operationId": "saveStudent",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StudentDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/StudentDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/get-student-by-email/{email}": {
+      "get": {
+        "tags": [
+          "Student"
+        ],
+        "summary": "Get a student by its email",
+        "operationId": "studentByEmail",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid email id"
+          },
+          "404": {
+            "description": "student not found"
+          }
+        }
+      }
+    },
+    "/api/get-all": {
+      "get": {
+        "tags": [
+          "Student"
+        ],
+        "summary": "Get all students",
+        "operationId": "allStudents",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/StudentDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/delete-student-by-email/{email}": {
+      "delete": {
+        "tags": [
+          "Student"
+        ],
+        "summary": "Delete student by it's email",
+        "operationId": "deleteStudentByEmail",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AddressDTO": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "string"
+          },
+          "province": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          }
+        }
+      },
+      "StudentDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "phNo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "favSubjects": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "address": {
+            "$ref": "#/components/schemas/AddressDTO"
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -38,11 +38,11 @@
 			<version>2.8.0</version>
 		</dependency>
 
-<!--		<dependency>-->
-<!--			<groupId>org.openapitools</groupId>-->
-<!--			<artifactId>jackson-databind-nullable</artifactId>-->
-<!--			<version>0.2.6</version>-->
-<!--		</dependency>-->
+		<dependency>
+			<groupId>org.openapitools</groupId>
+			<artifactId>jackson-databind-nullable</artifactId>
+			<version>0.2.6</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -77,32 +77,32 @@
 					</excludes>
 				</configuration>
 			</plugin>
-<!--			<plugin>-->
-<!--				<groupId>org.openapitools</groupId>-->
-<!--				<artifactId>openapi-generator-maven-plugin</artifactId>-->
-<!--				<version>7.0.1</version>-->
-<!--				<executions>-->
-<!--					<execution>-->
-<!--						<goals>-->
-<!--							<goal>generate</goal>-->
-<!--						</goals>-->
-<!--					</execution>-->
-<!--				</executions>-->
-<!--				<configuration>-->
-<!--					<inputSpec>${project.basedir}/src/main/resources/swagger-template/student-spec.yml</inputSpec>-->
-<!--					<generatorName>spring</generatorName>-->
-<!--					<output>${project.build.directory}/generated-sources</output>-->
-<!--					<modelPackage>com.example.dto</modelPackage>-->
-<!--					<configOptions>-->
-<!--						<interfaceOnly>true</interfaceOnly>-->
-<!--						<useSpringBoot3>true</useSpringBoot3>-->
-<!--						<useBeanValidation>true</useBeanValidation>-->
-<!--						<useJakartaEe>true</useJakartaEe>-->
-<!--					</configOptions>-->
-<!--					<generateApis>false</generateApis>-->
-<!--					<generateSupportingFiles>false</generateSupportingFiles>-->
-<!--				</configuration>-->
-<!--			</plugin>-->
+			<plugin>
+				<groupId>org.openapitools</groupId>
+				<artifactId>openapi-generator-maven-plugin</artifactId>
+				<version>7.0.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<inputSpec>${project.basedir}/src/main/resources/swagger-template/student-spec.yml</inputSpec>
+					<generatorName>spring</generatorName>
+					<output>${project.build.directory}/generated-sources</output>
+					<modelPackage>com.example.dto</modelPackage>
+					<configOptions>
+						<interfaceOnly>true</interfaceOnly>
+						<useSpringBoot3>true</useSpringBoot3>
+						<useBeanValidation>true</useBeanValidation>
+						<useJakartaEe>true</useJakartaEe>
+					</configOptions>
+					<generateApis>false</generateApis>
+					<generateSupportingFiles>false</generateSupportingFiles>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
