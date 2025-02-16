@@ -1,6 +1,7 @@
 package com.example.springboot.mongodb.controller;
 
 import com.example.springboot.mongodb.entity.Student;
+import com.example.springboot.mongodb.openapi.StudentApi;
 import com.example.springboot.mongodb.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-public class StudentController {
+public class StudentController implements StudentApi {
 
     @Autowired
     private StudentService studentService;
@@ -32,6 +33,7 @@ public class StudentController {
     public ResponseEntity<Student> saveStudent(@RequestBody Student student) {
         return ResponseEntity.status(HttpStatus.CREATED).body(studentService.saveStudent(student));
     }
+
 
     @DeleteMapping("/delete-student-by-email/{email}")
     public ResponseEntity deleteStudentByEmail(@PathVariable String email) {
