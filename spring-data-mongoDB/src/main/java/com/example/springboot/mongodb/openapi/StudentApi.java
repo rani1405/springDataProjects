@@ -1,6 +1,7 @@
 package com.example.springboot.mongodb.openapi;
 
 import com.example.springboot.mongodb.entity.Student;
+import com.example.springboot.mongodb.model.StudentResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -24,11 +25,11 @@ public interface StudentApi {
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Found the student",
                     content = { @Content(mediaType = "application/json",
-                            schema = @Schema(implementation = Student.class)) }),
+                            schema = @Schema(implementation = StudentResponse.class)) }),
             @ApiResponse(responseCode = "404", description = "Student does not exist",
                     content = @Content) })
     @RequestMapping(method = RequestMethod.GET, value = "/api/get-student-by-email/{email}")
-    ResponseEntity<Student> studentByEmail(@PathVariable String email) throws Exception;
+    ResponseEntity<StudentResponse> studentByEmail(@PathVariable String email) throws Exception;
 
 
     @Operation(summary = "Get all students")

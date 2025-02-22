@@ -1,6 +1,7 @@
 package com.example.springboot.mongodb.controller;
 
 import com.example.springboot.mongodb.entity.Student;
+import com.example.springboot.mongodb.model.StudentResponse;
 import com.example.springboot.mongodb.openapi.StudentApi;
 import com.example.springboot.mongodb.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class StudentController implements StudentApi {
     private StudentService studentService;
 
     @GetMapping("/get-student-by-email/{email}")
-    public ResponseEntity<Student> studentByEmail(@PathVariable String email) throws Exception {
+    public ResponseEntity<StudentResponse> studentByEmail(@PathVariable String email) throws Exception {
         return ResponseEntity.status(HttpStatus.OK).body(studentService.studentByEmail(email));
     }
 
