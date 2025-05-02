@@ -19,4 +19,10 @@ public class Student {
     @Column(name = "emailAddress", columnDefinition = "text[]")
     private List<String> emailAddress;
 
+    @ElementCollection
+    @CollectionTable(name = "address", joinColumns = @JoinColumn(name = "stud_id", referencedColumnName = "id"))
+    private List<Address> addressList;
+
+    private
+
 }

@@ -11,12 +11,14 @@ public interface StudentMapper {
     @Mapping(source = "student.id", target = "studentId")
     @Mapping(source = "student.name", target = "studentName")
     @Mapping(source = "student.emailAddress", target = "studentEmailAddresses")
+    @Mapping(source = "student.addressList", target = "addressList")
     StudentResponseDTO saveStudentResponse(Student student);
 
 
     @Mapping(source = "student.id", target = "studentId")
     @Mapping(source = "student.name", target = "studentName")
     @Mapping(source = "student.emailAddress", target = "studentEmailAddresses")
+    @Mapping(source = "student.addressList", target = "addressList")
     StudentResponseDTO getStudentResponse(Student student);
 
 
