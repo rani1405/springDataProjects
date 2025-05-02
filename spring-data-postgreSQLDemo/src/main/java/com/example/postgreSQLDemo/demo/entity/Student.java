@@ -23,6 +23,4 @@ public class Student {
     @CollectionTable(name = "address", joinColumns = @JoinColumn(name = "stud_id", referencedColumnName = "id"))
     private List<Address> addressList;
 
-    private
-
 }
