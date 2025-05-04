@@ -1,6 +1,5 @@
 package com.example.postgreSQLDemo.demo.controller;
 
-import com.example.postgreSQLDemo.demo.dto.StudentRequestDTO;
 import com.example.postgreSQLDemo.demo.dto.StudentResponseDTO;
 import com.example.postgreSQLDemo.demo.entity.Student;
 import com.example.postgreSQLDemo.demo.service.StudentService;
